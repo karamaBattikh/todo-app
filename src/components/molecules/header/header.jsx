@@ -15,7 +15,7 @@ const Header = () => {
             <Link to="/home">Home</Link>
           </li>
           <li>
-            <Link to="/todo-list">Taches</Link>
+            <Link to="/todo-list">Tâches</Link>
           </li>
           {!isAuthenticated ? (
             <li>
@@ -23,7 +23,7 @@ const Header = () => {
             </li>
           ) : (
             <li>
-              <Button color="darkgrey" bgColor="transparent" onClick={signout}>
+              <Button color="gray" bgColor="transparent" onClick={signout}>
                 Déconnexion
               </Button>
             </li>

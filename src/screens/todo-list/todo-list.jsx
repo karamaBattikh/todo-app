@@ -28,9 +28,10 @@ const ListTodo = () => {
 
   return (
     <TodoListWrapper>
-      <h1>List des taches</h1>
+      <h1>List des tâches</h1>
       <List />
       <hr />
+      <h1>Créer une nouvelle tâche</h1>
       <AddTodoForm
         onSubmit={handleSubmit(onSubmit)}
         register={register}

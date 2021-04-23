@@ -17,7 +17,7 @@ const HeaderWrapper = styled.div`
     }
     li,
     a {
-      color: darkgrey;
+      color: gray;
     }
   }
 `;
