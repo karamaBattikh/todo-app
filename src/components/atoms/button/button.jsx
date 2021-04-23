@@ -9,6 +9,7 @@ const ButtonWrapper = styled.button`
   background: ${({ bgColor }) => (bgColor ? bgColor : "royalblue")};
   color: ${({ color }) => (color ? color : "white")};
   font-size: 15px;
+  white-space: nowrap;
 `;
 
 const Button = ({

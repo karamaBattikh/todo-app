@@ -1,6 +1,7 @@
 import { Route } from "react-router-dom";
 import PrivateRoute from "./private-route";
 import Login from "../page/login";
+import TodoList from "../page/todo-list";
 
 export const RoutesList = [
   {
@@ -14,7 +15,7 @@ export const RoutesList = [
     name: "todo-list",
     pathIsExact: true,
     path: "/todo-list",
-    component: () => <div>todo List</div>,
+    component: () => <TodoList />,
     // isPrivate: true,
   },
   {

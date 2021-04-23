@@ -2,12 +2,12 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const LabelWrapper = styled.div`
-  padding: 6px 2px;
+  padding: 2px 4px;
   color: white;
   background-color: ${({ color }) => color && color};
   font-size: 12px;
   display: inline-block;
-  border-radius: 6px;
+  border-radius: 4px;
 `;
 
 const Label = ({ color, children }) => (

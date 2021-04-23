@@ -2,8 +2,23 @@ import { createContext, useState, useContext } from "react";
 
 export const TodoContext = createContext();
 
+const initialValue = [
+  {
+    id: 0,
+    name: "Envoyer un e-mail",
+    description: "A toute l'equipe",
+    status: "not-completed",
+  },
+  {
+    id: 1,
+    name: "Faire l'exercice",
+    description: "React only",
+    status: "completed",
+  },
+];
+
 export const TodoProvider = ({ children }) => {
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState(initialValue);
 
   const handleAddTodo = (values) => {
     setTodoList([

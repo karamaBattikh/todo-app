@@ -23,6 +23,7 @@ export const AuthProvider = ({ children }) => {
         email: values?.email,
         username: "test",
       });
+      window.location.reload("/home");
       return { error: false, data: user };
     }
     return { error: true, data: null };
@@ -30,6 +31,7 @@ export const AuthProvider = ({ children }) => {
 
   const signout = () => {
     Cookies.remove("token");
+    window.location.reload();
   };
 
   return (
