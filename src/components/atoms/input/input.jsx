@@ -60,7 +60,7 @@ Input.propTypes = {
   name: PropTypes.string,
   value: PropTypes.string,
   placeholder: PropTypes.string,
-  error: PropTypes.string,
+  error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   inputRef: PropTypes.func,
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
