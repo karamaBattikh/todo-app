@@ -32,24 +32,23 @@ export const RoutesList = [
   },
 ];
 
-export const switchRoute = () =>
-  RoutesList.map((route) => {
-    if (route.isPrivate) {
-      return (
-        <PrivateRoute
-          key={route.name}
-          exact={route.pathIsExact}
-          path={route.path}
-          component={route.component}
-        />
-      );
-    }
+export const switchRoute = RoutesList.map((route) => {
+  if (route.isPrivate) {
     return (
-      <Route
+      <PrivateRoute
         key={route.name}
         exact={route.pathIsExact}
         path={route.path}
         component={route.component}
       />
     );
-  });
+  }
+  return (
+    <Route
+      key={route.name}
+      exact={route.pathIsExact}
+      path={route.path}
+      component={route.component}
+    />
+  );
+});

@@ -6,9 +6,9 @@ const ButtonWrapper = styled.button`
   cursor: pointer;
   padding: 12px 8px;
   border-radius: 4px;
-  background: royalblue;
-  color: white;
-  font-size: 16px;
+  background: ${({ bgColor }) => (bgColor ? bgColor : "royalblue")};
+  color: ${({ color }) => (color ? color : "white")};
+  font-size: 15px;
 `;
 
 const Button = ({
@@ -18,6 +18,8 @@ const Button = ({
   className = "",
   center,
   disabled = false,
+  color,
+  bgColor,
 }) => (
   <ButtonWrapper
     type={type}
@@ -25,6 +27,8 @@ const Button = ({
     center={center}
     onClick={onClick}
     disabled={disabled}
+    color={color}
+    bgColor={bgColor}
   >
     {children}
   </ButtonWrapper>
@@ -37,6 +41,8 @@ Button.propTypes = {
   center: PropTypes.bool,
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
+  color: PropTypes.string,
+  bgColor: PropTypes.string,
 };
 
 export default Button;
