@@ -24,9 +24,9 @@ export const AuthProvider = ({ children }) => {
         username: "test",
       });
 
-      return { error: false, data: user };
+      return { ok: true };
     }
-    return { error: true, data: null };
+    return { ok: false };
   };
 
   const signout = () => {

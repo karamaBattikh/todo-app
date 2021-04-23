@@ -16,12 +16,12 @@ const Login = () => {
   const history = useHistory();
 
   const onSubmit = (values) => {
-    const { error, data } = signin(values);
-    if (error) {
+    const result = signin(values);
+
+    if (!result?.ok) {
       setError("password", { type: "server" });
       setError("email", { type: "server" });
-    }
-    if (data) {
+    } else {
       history.push("/todo-list");
     }
   };
