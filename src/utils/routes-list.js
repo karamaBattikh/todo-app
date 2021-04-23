@@ -17,14 +17,14 @@ export const RoutesList = [
     pathIsExact: true,
     path: "/todo-list",
     component: () => <TodoList />,
-    // isPrivate: true,
+    isPrivate: true,
   },
   {
     name: "task",
     pathIsExact: true,
     path: "/todo-list/:task",
     component: () => <EditTodo />,
-    // isPrivate: true,
+    isPrivate: true,
   },
   {
     name: "login",

@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { createBrowserHistory } from "history";
+import { useHistory } from "react-router-dom";
 import { useAuth } from "../../contexts/auth-context";
 import LoginForm from "../../components/molecules/login-form";
 
@@ -13,7 +13,7 @@ const Login = () => {
     defaultValues: { ...initialValues },
   });
   const { signin } = useAuth();
-  const history = createBrowserHistory();
+  const history = useHistory();
 
   const onSubmit = (values) => {
     const { error, data } = signin(values);
