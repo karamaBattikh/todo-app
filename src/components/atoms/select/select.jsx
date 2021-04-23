@@ -6,13 +6,17 @@ const SelectWrapper = styled.select`
   border-radius: 6px;
 `;
 
-const Select = ({ color, children }) => (
-  <SelectWrapper color={color}>{children}</SelectWrapper>
+const Select = ({ name, children, inputRef, defaultValue }) => (
+  <SelectWrapper name={name} ref={inputRef} defaultValue={defaultValue}>
+    {children}
+  </SelectWrapper>
 );
 
 Select.propTypes = {
-  color: PropTypes.string,
+  name: PropTypes.string,
+  defaultValue: PropTypes.string,
   children: PropTypes.string,
+  inputRef: PropTypes.func,
 };
 
 export default Select;

@@ -1,4 +1,5 @@
 import { useTodo } from "../../../contexts/todo-context";
+import { Link } from "react-router-dom";
 import Label from "../../atoms/label";
 import Button from "../../atoms/button";
 import ListWrapper from "./list-wrapper";
@@ -24,6 +25,8 @@ const List = () => {
             >
               Supprimer
             </Button>
+            {" - "}
+            <Link to={`/todo-list/${item.id}`}>Modifier</Link>
           </div>
 
           <Label color={item?.status === "not-completed" ? "red" : "green"}>

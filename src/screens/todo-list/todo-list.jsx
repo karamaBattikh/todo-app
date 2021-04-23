@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTodo } from "../../contexts/todo-context";
@@ -31,7 +30,6 @@ const ListTodo = () => {
     <TodoListWrapper>
       <h1>List des taches</h1>
       <List />
-      {/* <Link to={`/todo-list/${todo.id}`}>edit</Link> */}
       <hr />
       <AddTodoForm
         onSubmit={handleSubmit(onSubmit)}
