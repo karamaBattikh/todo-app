@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useAuth } from "../../../contexts/auth-context";
 import Button from "../../atoms/button";
 
 const HeaderWrapper = styled.div`
@@ -24,28 +25,31 @@ const HeaderWrapper = styled.div`
   }
 `;
 
-const Header = () => (
-  <HeaderWrapper>
-    <h2>Todo List</h2>
-    <nav>
-      <ul>
-        <li>
-          <Link to="/home">Home</Link>
-        </li>
-        <li>
-          <Link to="/todo-list">Taches</Link>
-        </li>
-        <li>
-          <Link to="/login"> Connexion</Link>
-        </li>
-        <li>
-          <Button color="darkgrey" bgColor="transparent">
-            Déconnexion
-          </Button>
-        </li>
-      </ul>
-    </nav>
-  </HeaderWrapper>
-);
+const Header = () => {
+  const { signout } = useAuth();
 
+  return (
+    <HeaderWrapper>
+      <h2>Todo List</h2>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/home">Home</Link>
+          </li>
+          <li>
+            <Link to="/todo-list">Taches</Link>
+          </li>
+          <li>
+            <Link to="/login"> Connexion</Link>
+          </li>
+          <li>
+            <Button color="darkgrey" bgColor="transparent" onClick={signout}>
+              Déconnexion
+            </Button>
+          </li>
+        </ul>
+      </nav>
+    </HeaderWrapper>
+  );
+};
 export default Header;

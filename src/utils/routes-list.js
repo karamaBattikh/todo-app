@@ -1,5 +1,6 @@
 import { Route } from "react-router-dom";
 import PrivateRoute from "./private-route";
+import Login from "../page/login";
 
 export const RoutesList = [
   {
@@ -27,7 +28,7 @@ export const RoutesList = [
     name: "login",
     pathIsExact: true,
     path: "/login",
-    component: () => <div>login</div>,
+    component: () => <Login />,
     isPrivate: false,
   },
 ];

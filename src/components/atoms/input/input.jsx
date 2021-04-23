@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const InputWrapper = styled.div`
   margin: 16px auto;
+  width: 100%;
   input {
     padding: 8px 14px;
     margin: 4px auto;
@@ -10,6 +11,7 @@ const InputWrapper = styled.div`
     border: 1px solid ${({ error }) => (error ? "red" : "darkgray")};
     border-radius: 4px;
     font-size: 12px;
+    width: 100%;
   }
   label {
     color: darkslategray;
@@ -58,8 +60,8 @@ Input.propTypes = {
   name: PropTypes.string,
   value: PropTypes.string,
   placeholder: PropTypes.string,
-  error: PropTypes.bool,
-  inputRef: PropTypes.string,
+  error: PropTypes.string,
+  inputRef: PropTypes.func,
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
 };
