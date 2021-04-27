@@ -4,12 +4,16 @@ import styled from "styled-components";
 const ButtonWrapper = styled.button`
   border: 0;
   cursor: pointer;
-  padding: 12px 8px;
-  border-radius: 4px;
+  padding: ${({ icon }) => (icon ? "0" : "8px 10px")};
+  border-radius: ${({ icon }) => (icon ? "50%" : "4px")};
   background: ${({ bgColor }) => (bgColor ? bgColor : "royalblue")};
   color: ${({ color }) => (color ? color : "white")};
   font-size: 15px;
   white-space: nowrap;
+  i {
+    font-size: 30px;
+    border-radius: 50%;
+  }
 `;
 
 const Button = ({
@@ -21,6 +25,7 @@ const Button = ({
   disabled = false,
   color,
   bgColor,
+  icon,
 }) => (
   <ButtonWrapper
     type={type}
@@ -30,8 +35,9 @@ const Button = ({
     disabled={disabled}
     color={color}
     bgColor={bgColor}
+    icon={icon}
   >
-    {children}
+    {icon ? <i className={icon} /> : children}
   </ButtonWrapper>
 );
 

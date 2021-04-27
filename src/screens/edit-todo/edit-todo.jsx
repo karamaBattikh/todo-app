@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { useTodo } from "../../contexts/todo-context";
 import EditForm from "../../components/molecules/edit-todo-form";
 

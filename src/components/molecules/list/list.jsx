@@ -2,10 +2,23 @@ import { useTodo } from "../../../contexts/todo-context";
 import { Link } from "react-router-dom";
 import Label from "../../atoms/label";
 import Button from "../../atoms/button";
+import { useModal } from "../../../contexts/modal-context";
 import ListWrapper from "./list-wrapper";
 
 const List = () => {
   const { todoList, handleRemoveTodo } = useTodo();
+  const { onClose, handleOpen } = useModal();
+
+  const handleClick = (item) => {
+    handleOpen({
+      text: `Vous êtes sûr de vouloir supprimer Todo: "${item?.name}"`,
+      handleClick: () => {
+        handleRemoveTodo(item?.id);
+        onClose();
+      },
+    });
+  };
+
   return (
     <ListWrapper>
       {todoList?.length > 0 ? (
@@ -22,7 +35,7 @@ const List = () => {
                 color="blue"
                 bgColor="transparent"
                 type="button"
-                onClick={() => handleRemoveTodo(item.id)}
+                onClick={() => handleClick(item)}
               >
                 Supprimer
               </Button>

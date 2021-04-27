@@ -4,17 +4,21 @@ import { switchRoute } from "./utils/routes-list";
 import Header from "./components/molecules/header";
 import { AuthProvider } from "./contexts/auth-context";
 import { TodoProvider } from "./contexts/todo-context";
+import { ModalProvider } from "./contexts/modal-context";
 
 export default function App() {
   return (
     <AuthProvider>
-      <TodoProvider>
-        <Router>
-          <ResetCss />
-          <Header />
-          <Switch>{switchRoute}</Switch>
-        </Router>
-      </TodoProvider>
+      <ModalProvider>
+        <TodoProvider>
+          <Router>
+            <ResetCss />
+            <Header />
+            <Switch>{switchRoute}</Switch>
+            <div id="modal-root" />
+          </Router>
+        </TodoProvider>
+      </ModalProvider>
     </AuthProvider>
   );
 }

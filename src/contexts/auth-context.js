@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }) => {
 
   const signout = () => {
     Cookies.remove("token");
-    window.location.reload();
+    window.location.replace("/");
   };
 
   return (

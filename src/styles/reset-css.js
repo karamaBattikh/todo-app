@@ -52,6 +52,39 @@ const reset = createGlobalStyle`
 a {
   text-decoration: none
 }
+
+/* import font */
+
+
+@font-face {
+  font-family: "todo_icon";
+  src: url("/fonts/todo_icon.eot");
+  src: url("/fonts/todo_icon.eot") format("embedded-opentype"),
+    url("/fonts/todo_icon.ttf") format("truetype"),
+    url("/fonts/todo_icon.woff") format("woff"),
+    url("/fonts/todo_icon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+i {
+  font-family: "todo_icon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/************ icon ************/
+.icon-close:before {
+  content: "\\e900";
+}
+
 `;
 
 export default reset;

@@ -8,6 +8,13 @@ export const RoutesList = [
   {
     name: "home",
     pathIsExact: true,
+    path: "/",
+    component: () => <div>home</div>,
+    isPrivate: false,
+  },
+  {
+    name: "home",
+    pathIsExact: true,
     path: "/home",
     component: () => <div>home</div>,
     isPrivate: false,
