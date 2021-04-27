@@ -2,6 +2,16 @@
 
 ![screenshots](./screenshots/todo-list.PNG?raw=true)
 
+
+## Description:
+
+Todo-App, c'est une plateforme permet de gérer les tâches d'un utilisateur, l'utilisateur peut se connecter à la plate-forme et créer ses tâches en tapant le nom de la tâche et leur descriptif.
+
+Chaque tâche à deux statuts soit "complété" ou bien "non complété" (par défaut le statutest "non complétée") par la suite si l'utilisateur a exécuté cette tache, il peut modifier le statut à: "complété" en cliquant sur "Modifier" et modifier le statut.
+
+Si l'utilisateur veut supprimer la tache, il clique sur "supprimer" et confirm la supprition.
+
+
 ## Les etapes:
 
 - 1 `yarn add`
